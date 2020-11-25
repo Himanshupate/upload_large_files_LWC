@@ -1,0 +1,31 @@
+<template>
+    <!--Modal-->
+    <template if:true={isModalOpen}>
+        <lightning-record-edit-form object-api-name="Catalog_Documents__c">
+             <lightning-combobox label="Catalog" value={value} placeholder="Select Catalog" 
+                            options={selectedCatalogs} onchange={handleCatalogChange} required>
+            </lightning-combobox>
+
+            <lightning-input-field field-name="Document_Name__c" onchange={nameChanged} value={docName}>
+            </lightning-input-field>
+            <lightning-input-field field-name="Document_Type__c" onchange={selectionChangeHandler} value={docType}>
+            </lightning-input-field>
+            <lightning-input name="Select File" type="file" label="Select Files" accept={filerestrict}
+                onchange={handleFilesChange}>
+            </lightning-input>
+
+            <template if:true={isLoading}>
+                <div class="exampleHolder">
+                    <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+                </div>
+                Uploading
+            </template>
+            &nbsp; {fileName}
+            <br />
+            <lightning-button variant="brand" label="Upload" title="Upload" onclick={handleUpload}
+                disabled={btnDisabled}>
+            </lightning-button>
+        </lightning-record-edit-form>
+
+    </template>
+</template>
