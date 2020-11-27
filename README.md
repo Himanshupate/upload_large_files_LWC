@@ -1,13 +1,4 @@
 For integrating Salesforce© with follow the steps below – 
-  1.	Create Amazon account and S3 bucket
-  2.	Generate access key and secret key id
-  3.	Configure the bucket policy
-  4.	Create a new object in Salesforce© org
-  5.	Create metadata for storing credentials
-  6.	Add AWS SDK in static resource
-  7.	Create CSP settings for AWS
-  8.	Create an Apex class for creating a record in the object.
-  9.	Create a LWC component
 
 1.	Create Amazon Account and S3 bucket – 
 The very first step is to create an AWS account (follow this link to create an AWS account). After successful account creation  
